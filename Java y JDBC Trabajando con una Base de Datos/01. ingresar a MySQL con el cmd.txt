@@ -1,0 +1,11 @@
+Sí tienes dudas de como ingresar en la terminal te voy a ayudar con unos pasos para ingresar desde Windows:
+
+Ingresar a la terminal.
+Colocar cd \
+Colocar cd "Program Files"
+Colocar cd MySQL
+Colocar cd "MySQL Server 8.0"
+Colocar cd bin
+Colocar mysql -h localhost -u root -p
+Te pedirá que ingreses tu constraseña de MySQL
+Ingresa los comandos de SQL que desees.
