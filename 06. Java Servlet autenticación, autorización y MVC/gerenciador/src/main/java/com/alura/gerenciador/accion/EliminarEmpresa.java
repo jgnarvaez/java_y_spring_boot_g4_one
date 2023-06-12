@@ -8,9 +8,9 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-public class EliminarEmpresa implements Accion{
+public class EliminarEmpresa {
 	
-	public String ejecutar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void ejecutar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String paramId = request.getParameter("id");
 		Integer id = Integer.valueOf(paramId);
@@ -20,7 +20,7 @@ public class EliminarEmpresa implements Accion{
 		DB db = new DB();
 		db.eliminarEmpresa(id);
 		
-		return "redirect:entrada?accion=ListaEmpresas";
+		response.sendRedirect("entrada?accion=ListaEmpresas");
 	}
 
 }

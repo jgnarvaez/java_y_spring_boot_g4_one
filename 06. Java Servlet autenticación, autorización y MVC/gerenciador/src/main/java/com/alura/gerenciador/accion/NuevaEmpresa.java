@@ -1,21 +1,22 @@
-package com.alura.gerenciador.servlet;
+package com.alura.gerenciador.accion;
 
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import com.alura.gerenciador.modelo.DB;
+import com.alura.gerenciador.modelo.Empresa;
 
-public class NuevaEmpresaServlet extends HttpServlet {
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+public class NuevaEmpresa {
 	
-	private static final long serialVersionUID = 1L;
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
-			throws ServletException, IOException {
+	public void ejecutar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		System.out.println("nueva empresa registrada");
 		
 		String nombreEmpresa = request.getParameter("nombre");
@@ -38,12 +39,8 @@ public class NuevaEmpresaServlet extends HttpServlet {
 		
 		request.setAttribute("empresa", empresa.getNombre());
 		
-		response.sendRedirect("listaEmpresas");
+		response.sendRedirect("entrada?accion=ListaEmpresas");
 		
-		//llamar al jsp
-//		RequestDispatcher rd = request.getRequestDispatcher("/listaEmpresas");
-//		request.setAttribute("empresa", empresa.getNombre());
-//		rd.forward(request, response);
 	}
 
 }

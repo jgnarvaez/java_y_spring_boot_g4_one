@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ page import="java.util.List, com.alura.gerenciador.servlet.Empresa"%>
+<%@ page import="java.util.List,com.alura.gerenciador.modelo.Empresa"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
@@ -21,8 +21,8 @@
 			
 			<li>
 				${ empresa.nombre } - <fmt:formatDate value="${empresa.fechaAbertura }" pattern="dd/MM/yyyy"/>
-				<a href="/gerenciador/mostrarEmpresa?id=${ empresa.id }">modificar</a>
-				<a href="/gerenciador/eliminarEmpresa?id=${ empresa.id }">eliminar</a>
+				<a href="/gerenciador/entrada?accion=MostrarEmpresa&id=${ empresa.id }">modificar</a>
+				<a href="/gerenciador/entrada?accion=EliminarEmpresa&id=${ empresa.id }">eliminar</a>
 			</li>
 		</c:forEach>
 	
